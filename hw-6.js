@@ -12,26 +12,26 @@ const getUsersWithEyeColor = (users, color) => {
   // return users.filter(eye => eye.eyeColor===color).map(el => ("object"), el.name);
   return users
     .filter((user) => user.eyeColor === color)
-    .map((el) => console.log( el.name));
+    // .map((el) => console.log( el.name));
 };
 console.log(`объект`, getUsersWithEyeColor( users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
 
 
 //task_3
 const getUsersWithGender = (users, gender) => {
-  const getUserNames = (users) => users.map((name) => name.name);
+  // const getUserNames = (users) => users.map((name) => name.name);
   return users
     .filter((user) => user.gender === gender)
     .map((el) => console.log(el.name));
 };
 
-console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+getUsersWithGender(users, 'male'); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 //task_4
 const getInactiveUsers = users => {
   return users
-  .filter((user) => user.isActive === false)
-  .map((el) => console.log("object", el.name));
+  .filter((user) => !user.isActive)
+  // .map((el) => console.log("object", el.name));
 };
 
 console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
@@ -75,7 +75,7 @@ console.log(getUsersWithFriend(users, "Goldie Gentry")); // [ 'Elma Head', 'Sher
 //task_9
 const getNamesSortedByFriendsCount = (users) => {
   return users
-    .sort((min, max) => min.friends.length - max.friends.length)
+    .sort((prev, next) => prev.friends.length - next.friends.length)
     .map((lm) => lm.name);
 };
 

@@ -22,10 +22,10 @@ const getUsersWithGender = (users, gender) => {
   // const getUserNames = (users) => users.map((name) => name.name);
   return users
     .filter((user) => user.gender === gender)
-    .map((el) => console.log(el.name));
+    .map((el) => (el.name));
 };
 
-getUsersWithGender(users, 'male'); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+console.log(getUsersWithGender(users, 'male')) ; // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 //task_4
 const getInactiveUsers = users => {
